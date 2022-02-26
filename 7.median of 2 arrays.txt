@@ -1,0 +1,51 @@
+QUESTION:
+
+ANSWER:
+//Using ananymous function.
+let arr1= [4,2,3,4,5];
+let arr2=[8,9,10,2,8];
+//creating function
+let getmedian = function(a1,a2) {
+    let concat = a1.concat(a2);
+    let sortedarr = concat.sort((a,b)=>a-b);
+    console.log(sortedarr);
+//for any two arrays of same length 2n median will be n and (n-1)
+    let middleindex = sortedarr.length/2;
+    return ((sortedarr[middleindex]+sortedarr[middleindex-1])/2);
+}
+console.log(getmedian(arr1,arr2));
+
+OUTPUT:
+[Running] node "c:\Users\Lenovo\Desktop\guvi\script.js"
+[
+  2, 2, 3, 4,  4,
+  5, 8, 8, 9, 10
+]
+4.5
+
+[Done] exited with code=0 in 0.282 seconds
+
+//using IIFE function.
+
+//defining two arrays
+let arr1= [4,2,3,4,5];
+let arr2=[8,9,10,2,8];
+//creating function
+(function(a1,a2) {
+    let concat = a1.concat(a2);
+    let sortedarr = concat.sort((a,b)=>a-b);
+    console.log(sortedarr);
+//for any two arrays of same length 2n median will be n and (n-1)
+    let middleindex = sortedarr.length/2;
+    return console.log(((sortedarr[middleindex]+sortedarr[middleindex-1])/2));
+}) (arr1,arr2)
+
+  OUTPUT:
+[Running] node "c:\Users\Lenovo\Desktop\guvi\script.js"
+[
+  2, 2, 3, 4,  4,
+  5, 8, 8, 9, 10
+]
+4.5
+
+[Done] exited with code=0 in 0.193 seconds

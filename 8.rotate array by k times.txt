@@ -1,0 +1,80 @@
+QUESTION:
+Rotate an array by k times
+
+ANSWER:
+//Using anonymous function.
+//function defnition
+let rotate = function (a,n,k){
+//if k>n,rotation may not be possible.so,mod of k by n gives equivalent value.
+    k=k%n;
+//problem logic
+    for (let i=0;i<n;i++){
+//untill i<k print left elements to first
+        if (i<k){
+            console.log(a[n+i-k]);
+        }
+//then print remaining elements
+        else {
+            console.log(a[i-k]);
+        }
+
+    }
+}
+//defining array,n,k
+let array = [1,2,3,4,5,6,7,8,9];
+let n = array.length;
+let k = 5;
+//function calling
+rotate(array,n,k);
+
+OUTPUT:
+Running] node "c:\Users\Lenovo\Desktop\guvi\script.js"
+5
+6
+7
+8
+9
+1
+2
+3
+4
+
+[Done] exited with code=0 in 0.086 seconds
+
+//usingIIFE function.
+
+//defining array,n,k
+let array = [1,2,3,4,5,6,7,8,9];
+let n = array.length;
+let k = 5;
+//function defnition
+( function (a,n,k){
+//if k>n,rotation may not be possible.so,mod of k by n gives equivalent value.
+    k=k%n;
+//problem logic
+    for (let i=0;i<n;i++){
+//untill i<k print left elements to first
+        if (i<k){
+            console.log(a[n+i-k]);
+        }
+//then print remaining elements
+        else {
+            console.log(a[i-k]);
+        }
+
+    }
+})(array,n,k);
+
+OUTPUT:
+[Running] node "c:\Users\Lenovo\Desktop\guvi\script.js"
+5
+6
+7
+8
+9
+1
+2
+3
+4
+
+[Done] exited with code=0 in 0.106 seconds

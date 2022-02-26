@@ -1,0 +1,39 @@
+QUESTION:
+Return all the palindromes in an array.
+
+ANSWER:
+//create an empty array 
+var resultwords=[];
+//creating a function
+let ispalindrome = (words) => {
+    let pal = words.toString().split("").reverse().join("").split(",");
+    //the array word is coverted to indivual string,splited
+    //then each strings are reversed
+    //joined to form reversed word
+    //splited again for checking purpose
+    console.log(pal);
+    for(let i = 0; i < words.length; i++) {
+        for (let j = 0; j < pal.length; j++) {
+            //logic to check whether word is a palindrome
+             if(words[i]==pal[j]){
+                 resultwords.push(words[i]);
+            }
+        }
+    } 
+ return console.log(resultwords);
+}
+let array = ["racecar","madam","nun","prettier","golive",333,555];
+// calling the function.
+ispalindrome(array); 
+
+OUTPUT:
+[Running] node "c:\Users\Lenovo\Desktop\guvi\script.js"
+[
+  '555',     '333',
+  'evilog',  'reitterp',
+  'nun',     'madam',
+  'racecar'
+]
+[ 'racecar', 'madam', 'nun', 333, 555 ]
+
+[Done] exited with code=0 in 0.368 seconds

@@ -1,0 +1,40 @@
+QUESTION:
+Sum of all numbers in an array.
+
+ANSWER:
+USING ANONYMOUS FUNCTION
+
+//creating function
+let getsum=function(arr){
+    //logic
+    let sum = 0;
+    for (let i = 0; i < arr.length;i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+//creating an array
+let array = [1,2,3,4,5,6,7,8,9]
+//calling the function
+console.log(getsum(array));
+
+OUTPUT:
+
+PS C:\Users\Lenovo\Desktop\guvi>  node script.js
+45
+
+USING IIFE FUNCTION
+let array = [1,2,3,4,5,6,7];
+(function (numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum+= numbers[i];
+    }
+    console.log(sum);
+}) (array);
+
+OUTPUT:
+[Running] node "c:\Users\Lenovo\Desktop\guvi\script.js"
+28
+
+[Done] exited with code=0 in 1.031 second
